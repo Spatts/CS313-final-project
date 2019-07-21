@@ -6,7 +6,7 @@ require('dotenv').config();
 const { Pool } = require("pg")
 const connectionString = process.env.DATABASE_URL;
 const pool = new Pool({connectionString: connectionString});
-const homepageController = require("./controller/controller.js");
+const controller = require("./controller/controller.js");
 
 app
   .use(express.static(path.join(__dirname, 'public')))
@@ -21,4 +21,3 @@ app
   .post('/removeBook', controller.removeBook)
   .post('/editBook', controller.editBook)
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
-  
