@@ -1,7 +1,7 @@
-const homepageModel = require("../model/model.js")
+const model = require("../model/model.js")
 
 function getBook(req, res){
-    homepageModel.getBook(function(error, result){
+    model.getBook(function(error, result){
         if (error || result == null) {
             res.status(500).json({success: false, data: error});
         } 
@@ -12,7 +12,7 @@ function getBook(req, res){
 }
 
 function getalphaBook(req, res){
-    homepageModel.getalphaBook(function(error, result){
+    model.getalphaBook(function(error, result){
         if (error || result == null) {
             res.status(500).json({success: false, data: error});
         } 
@@ -24,20 +24,20 @@ function getalphaBook(req, res){
 
 function addBook(req, res){
     const book = req.body.book
-    homepageModel.addBook(book, function(error, result){
+    model.addBook(book, function(error, result){
     })
 }
 
 function removeBook(req,res){
     const kids = req.body.kids
-    homepageModel.removeBook(kids, function(error, result){
+    model.removeBook(kids, function(error, result){
 
     });
 }
 
 function editBook(req,res){
     const book = req.body.book
-    homepageModel.editBook(book, function(error, result){
+    model.editBook(book, function(error, result){
 
     });
 }
